@@ -6,7 +6,7 @@ def index(request):
     return HttpResponse('Please add /recipes/list to view recipes.')
 
 def recipe_list(request):
-    ctx = {
+    context = {
         "recipes": [
             {
                 "name": "Recipe 1",
@@ -70,10 +70,10 @@ def recipe_list(request):
             }
         ]
     }
-    return render(request, "recipe_list.html", ctx)
+    return render(request, "recipe_list.html", context)
 
 def recipe1(request):
-    ctx = {
+    context = {
         "name": "Recipe 1",
         "ingredients": [
             {
@@ -99,10 +99,10 @@ def recipe1(request):
         ],
         "link": "/recipe/1"
     }
-    return render(request, "recipe1.html", ctx)
+    return render(request, "recipe1.html", context)
 
 def recipe2(request):
-    ctx = {
+    context = {
         "name": "Recipe 2",
         "ingredients": [
             {
@@ -136,4 +136,4 @@ def recipe2(request):
         ],
         "link": "/recipe/2"
     }
-    return render(request, "recipe2.html", ctx)
+    return render(request, "recipe2.html", context)
