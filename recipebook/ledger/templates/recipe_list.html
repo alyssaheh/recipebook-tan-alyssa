@@ -7,7 +7,7 @@
                 <a href="{% url 'ledger:recipe_detail' recipe.pk %}">{{ recipe.name }}</a>
             </li>
             {% empty %}
-                <li>No ingredients listed.</li>
+                <li>No recipes listed.</li>
         {% endfor %}
     </ul>
 {% endblock %}
