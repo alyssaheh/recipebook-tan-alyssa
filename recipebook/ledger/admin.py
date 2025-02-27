@@ -3,11 +3,14 @@ from .models import Recipe, RecipeIngredient
 
 # Register your models here.
 
+
 class RecipeIngredientInline(admin.TabularInline):
     model = RecipeIngredient
+
 
 class RecipeAdmin(admin.ModelAdmin):
     search_fields = ('name', )
     inlines = [RecipeIngredientInline]
+
 
 admin.site.register(Recipe, RecipeAdmin)
