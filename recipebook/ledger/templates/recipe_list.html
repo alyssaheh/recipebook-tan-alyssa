@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <ul>
-        {% for recipe in recipes %} 
-            <li>
-                {{ recipe.name }}: <a href="{{ recipe.link }}">{{ recipe.link }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    {% if recipes %}
+        <ul>
+            {% for recipe in recipes %} 
+                <li>
+                    {{ recipe.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes found.</p>
+    {% endif %}
 {% endblock %}
