@@ -4,18 +4,8 @@
     <ul>
         {% for recipe in recipes %} 
             <li>
-                <b>Name: {{ recipe.name }},</b>
-                <br>
-                Ingredients:
-                <ul>
-                    {% for ingredient in recipe.ingredients %}
-                        <li>name: {{ ingredient.name }} <br>
-                        quantity: {{ ingredient.quantity }}</li>
-                    {% endfor %}
-                </ul>
-                link: <a href="{{ recipe.link }}">{{ recipe.link }}</a>
+                {{ recipe.name }}: <a href="{{ recipe.link }}">{{ recipe.link }}</a>
             </li>
-            <br>
         {% endfor %}
     </ul>
 {% endblock %}
