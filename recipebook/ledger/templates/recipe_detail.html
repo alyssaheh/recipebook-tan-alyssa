@@ -7,7 +7,10 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
+    <p>Created on: {{ recipe.created_on|date:"F d, Y" }} | Updated on: {{ recipe.updated_on|date:"F d, Y" }}</p>
+
         <p><strong>Author:</strong> {{ recipe.author.username }}</p>
+        
         <h3>Ingredients:</h3>
         <ul>
             {% for ingredient in recipe.ingredients.all %}
