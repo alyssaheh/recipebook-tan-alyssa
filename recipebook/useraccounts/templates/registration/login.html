@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block title %}Login to Recipe Book{% endblock %}
-
 {% block page_title %}User Login{% endblock %}
 
 {% block content %}
@@ -11,5 +10,7 @@
         <button type="submit">Login</button>
     </form>
 
-    <a href="{% url 'password_reset' %}">Forgot password?</a>
+    <p>
+        <a href="{% url 'password_reset' %}">Forgot password?</a>
+    </p>
 {% endblock %}

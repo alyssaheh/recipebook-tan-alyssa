@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width, initialize-scale=1.0">
-        <title>{% block title %}Recipe Book{% endblock %}</title>
-    </head>
-    
-    <body>
-        <header>
-            <h1>Recipe Book</h1>
-    
-            {% if request.resolver_match.url_name != "login" %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initialize-scale=1.0">
+    <title>{% block title %}Recipe Book{% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <h1>Recipe Book</h1>
+
+        {% if request.resolver_match.url_name != "login" %}
             {% if request.user.is_authenticated %}
                 <form method="POST" action="{% url 'logout' %}">
                     {% csrf_token %}
@@ -20,12 +21,14 @@
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
             {% endif %}
-            {% endif %}
-        </header>
+        {% endif %}
+    </header>
 
-        <h2>{% block page_title %}{% endblock %}</h2>
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-    </body>
+    <h2>{% block page_title %}{% endblock %}</h2>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
 </html>
