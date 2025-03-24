@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView, CreateView
 from django.urls import reverse_lazy
+
 from .models import Recipe, RecipeImage
 from .forms import RecipeForm
 
@@ -40,7 +41,7 @@ class RecipeCreateView(CreateView):
         ctx = super().get_context_data(**kwargs)
         ctx['form_title'] = "Create a New Recipe"
         return ctx
-    
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
@@ -59,7 +60,7 @@ class RecipeImageView(CreateView):
         ctx['form_title'] = "Upload an Image"
         ctx['recipe'] = get_object_or_404(Recipe, pk=self.kwargs['pk'])
         return ctx
-    
+
     def form_valid(self, form):
         form.instance.recipe = get_object_or_404(Recipe, pk=self.kwargs['pk'])
         return super().form_valid(form)

@@ -9,6 +9,7 @@ class RecipeIngredientInline(admin.TabularInline):
 class RecipeImageInline(admin.TabularInline):
     model = RecipeImage
 
+
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
     search_fields = ('name', )
