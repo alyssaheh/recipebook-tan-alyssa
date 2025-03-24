@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Add More Recipes!</h2>
+    {% if request.user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit">
+        </form>
+    {% else %}
+        <p>Please log in to view recipe details.</p>
+    {% endif %}
+{% endblock %}

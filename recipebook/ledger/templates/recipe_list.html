@@ -5,6 +5,7 @@
 {% block page_title %}All Recipes{% endblock %}
 
 {% block content %}
+    <a href="{% url 'ledger:recipe-form' %}">Add New Recipes!</a>
     <ul>
         {% for recipe in object_list %}
             <li>

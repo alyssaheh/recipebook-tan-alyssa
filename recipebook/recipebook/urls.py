@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('recipes/', include('ledger.urls', namespace="ledger")),
+    path('', include('ledger.urls', namespace="ledger")),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
