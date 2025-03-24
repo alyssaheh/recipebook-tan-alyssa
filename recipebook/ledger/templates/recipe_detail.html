@@ -19,10 +19,14 @@
                 <li>No ingredients listed.</li>
             {% endfor %}
         </ul>
+
         {% for image in recipe.images.all %}
             <img src="{{ image.image.url }}" alt="{{ image.description }}">
         {% endfor %}
+        <br>
+        <a href="{% url 'ledger:add-image' recipe.pk %}">Upload Image</a>
+
     {% else %}
-        <p>Please log in to view recipe details.</p>
+        <p>Please log in to view details.</p>
     {% endif %}
 {% endblock %}

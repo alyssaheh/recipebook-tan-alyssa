@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Add More Recipes!</h2>
+    <h2>{{ form_title }}</h2>
     {% if request.user.is_authenticated %}
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
             <input type="submit" value="Submit">
         </form>
+
+        {% if recipe %}
+            <br>
+            <a href="{% url 'ledger:recipe-detail' recipe.pk %}">Back to Recipe</a>
+        {% endif %}     
     {% else %}
-        <p>Please log in to view recipe details.</p>
+        <p>Please log in to view details.</p>
     {% endif %}
 {% endblock %}

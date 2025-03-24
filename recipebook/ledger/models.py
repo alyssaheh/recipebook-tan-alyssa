@@ -43,7 +43,7 @@ class RecipeIngredient(models.Model):
 
 
 class RecipeImage(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', null=False)
     description = models.CharField(max_length=255)
     recipe = models.ForeignKey(
         Recipe,

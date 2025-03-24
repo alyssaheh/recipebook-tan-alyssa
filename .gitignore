@@ -1,5 +1,6 @@
 .env
 db.sqlite3
+images/
 myenv/
 **/*.pyc
 **/__pycache__
