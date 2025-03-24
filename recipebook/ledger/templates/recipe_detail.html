@@ -22,4 +22,8 @@
     {% else %}
         <p>Please log in to view recipe details.</p>
     {% endif %}
+
+    {% for image in recipe.images.all %}
+        <img src="{{ image.image.url }}" alt="{{ image.description }}">
+    {% endfor %}
 {% endblock %}
